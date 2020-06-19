@@ -1,0 +1,54 @@
+label {
+    display: inline-block;
+    margin: 10px 0;
+}
+
+input[type='text'],
+input[type='number'] {
+    border: 1px solid #dedede;
+    border-radius: 2px;
+    display: block;
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+}
+
+.btn,
+.btn-pri,
+.btn-sec {
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
+    color: #fff;
+    border: 0;
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin: 10px 0;
+    padding: 10px;
+    width: 48%;
+    transition: all ease 0.3s;
+}
+
+.btn-pri {
+    background-color: #007aff;
+    margin-right: 5px;
+}
+
+.btn-pri:hover {
+    background-color: #0a84ff;
+}
+
+.btn-sec {
+    background-color: #ff3030;
+    margin-left: 9px;
+}
+
+.btn-sec:hover,
+.btn-sec:focus {
+    background-color: #ff453a;
+}
+
+.btn:focus,
+.delete-btn:focus {
+    outline: 0;
+}

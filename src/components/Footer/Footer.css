@@ -1,0 +1,9 @@
+.footer {
+    background-color: #1f2020;
+    color: #f7f7f7;
+    text-align: center;
+    padding: 6px;
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    min-width: 100%;
+}

@@ -30,6 +30,9 @@ jobs:
     
     - name:  Intall material-ui/core
       run:  npm install @material-ui/core
+      
+    - name: Adding material-ui/core  
+      run: yarn add @material-ui/core
         
     - name: Build React App
       run: yarn build

@@ -9,6 +9,8 @@
   --green-pri: #34c759;
 }
 
+
+
 body {
   background-color: #f7f7f7;
   display: flex;
@@ -31,6 +33,7 @@ body {
   min-height: 100%;
 }
 
+
 h1 {
   letter-spacing: 1px;
   margin: 0;
@@ -48,6 +51,11 @@ h4 {
   margin: 0;
   text-transform: uppercase;
 
+}
+
+a {
+  text-decoration: underline;
+  color: #fff;
 }
 
 @media (max-width: 320px) {

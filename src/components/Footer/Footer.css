@@ -2,8 +2,12 @@
     background-color: #1f2020;
     color: #f7f7f7;
     text-align: center;
-    padding: 6px;
     font-size: 10px;
-    letter-spacing: 4px;
+    letter-spacing: 3px;
     min-width: 100%;
+}
+
+.footer p {
+    padding: 5px;
+    margin: 0;
 }

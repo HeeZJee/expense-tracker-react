@@ -6,11 +6,11 @@ import IncomeExpense from './components/IncomeExpense/IncomeExpense'
 import ListTransaction from './components/ListTransaction/ListTransaction'
 import AddTransaction from './components/AddTransaction/AddTransaction'
 import Footer from './components/Footer/Footer'
+import { ContextProvider } from './store/context'
 
 function App() {
   return (
-    <div>
-      {/* <Header /> */}
+    <ContextProvider>
       <div className='container' >
         <Balance />
         <IncomeExpense />
@@ -18,7 +18,7 @@ function App() {
         <AddTransaction />
       </div>
       <Footer />
-    </div>
+    </ContextProvider>
   );
 }
 

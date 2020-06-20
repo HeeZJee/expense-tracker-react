@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './AddTransaction.css';
 
 
 const AddTransaction = () => {
+    const [desc, setDesc] = useState('');
+    const [amount, setAmount] = useState('');
+
     return (
         <div className={'component'} >
             <form>
@@ -12,13 +15,12 @@ const AddTransaction = () => {
                 <div className='desc'>
                     <label htmlFor='description'>Description</label>
                     <br />
-                    <input type='text' id='description'></input>
+                    <input type='text' id='description' value={desc} onChange={(e) => setDesc(e.target.value)}></input>
                 </div>
-
                 <div className='amount'>
                     <label htmlFor='amount'>Amount</label>
                     <br />
-                    <input id='amount' type='number'></input>
+                    <input type='number' id='amount' value={amount} onChange={(e) => setAmount(e.target.value)}></input>
                 </div>
 
                 <div>

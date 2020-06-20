@@ -11,19 +11,17 @@ const ListTransaction = () => {
                 <li className="minus">
                     Cash <span>-$400</span><button className="delete-btn"><DeleteOutlinedIcon /></button>
                 </li>
+                <li className="minus">
+                    Cash <span>-$400</span><button className="delete-btn"><DeleteOutlinedIcon /></button>
+                </li>
+                <li className="minus">
+                    Cash <span>-$400</span><button className="delete-btn"><DeleteOutlinedIcon /></button>
+                </li>
+                <li className="minus">
+                    Cash <span>-$400</span><button className="delete-btn"><DeleteOutlinedIcon /></button>
+                </li>
 
-                <li className="minus">
-                    Cash <span>-$400</span><button className="delete-btn"><DeleteOutlinedIcon /></button>
-                </li>
-                <li className="minus">
-                    Cash <span>-$400</span><button className="delete-btn"><DeleteOutlinedIcon /></button>
-                </li>
-                <li className="minus">
-                    Cash <span>-$400</span><button className="delete-btn"><DeleteOutlinedIcon /></button>
-                </li>
-                <li className="minus">
-                    Cash <span>-$400</span><button className="delete-btn"><DeleteOutlinedIcon /></button>
-                </li>
+
             </ul>
         </div>
     )

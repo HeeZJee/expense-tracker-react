@@ -1,14 +1,18 @@
 .list {
+    position: relative;
     list-style-type: none;
     padding: 0;
-    margin-bottom: 40px;
-    overflow-y: auto;
+    margin-bottom: 20px;
 }
+
+
 
 .list ul {
     overflow-y: auto;
-    height: 210px;
+    height: 157px;
+    position: relative;
 }
+
 
 .list li {
     background-color: #fff;
@@ -23,23 +27,26 @@
 }
 
 .list li.plus {
-    border-right: 5px solid #34c759;
+    border-right: 5px solid var(--green-pri);
 }
 
 .list li.minus {
-    border-right: 5px solid #ff3030;
+    border-right: 5px solid var(--red-pri);
 }
 
 .delete-btn {
     cursor: pointer;
     border: 0;
-    border-radius: 20px;
+    border-radius: 50%;
     color: #333;
     line-height: 12px;
     padding: 3px 5px;
     position: absolute;
     top: 50%;
-    left: 40px;
-    transform: translate(-100%, -50%);
-    transition: opacity 0.3s ease;
+    left: 10px;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
 }
+
+.delete-btn:hover,
+.delete-btn:focus {}

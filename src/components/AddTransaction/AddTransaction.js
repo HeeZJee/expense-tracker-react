@@ -9,13 +9,13 @@ const AddTransaction = () => {
 
                 <h3>Add new transaction</h3>
 
-                <div>
+                <div className='desc'>
                     <label htmlFor='description'>Description</label>
                     <br />
                     <input type='text' id='description'></input>
                 </div>
 
-                <div>
+                <div className='amount'>
                     <label htmlFor='amount'>Amount</label>
                     <br />
                     <input id='amount' type='number'></input>

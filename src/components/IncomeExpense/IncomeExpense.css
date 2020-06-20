@@ -23,9 +23,9 @@
 }
 
 .money.plus {
-    color: #2ecc71;
+    color: var(--green-pri);
 }
 
 .money.minus {
-    color: #ff3030;
+    color: var(--red-pri);
 }

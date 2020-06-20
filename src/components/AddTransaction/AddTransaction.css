@@ -1,7 +1,22 @@
+form>div:not(:last-child) {
+    display: inline-block;
+}
+
+form .desc {
+    width: 72%;
+    margin-right: 3%;
+}
+
+form .amount {
+    width: 25%;
+}
+
 label {
     display: inline-block;
-    margin: 10px 0;
+    margin: 10px 5px;
 }
+
+
 
 input[type='text'],
 input[type='number'] {
@@ -23,29 +38,29 @@ input[type='number'] {
     display: inline-block;
     font-size: 12px;
     letter-spacing: 1px;
-    margin: 10px 0;
+    margin: 10px 0 0;
     padding: 10px;
     width: 48%;
     transition: all ease 0.3s;
 }
 
 .btn-pri {
-    background-color: #007aff;
+    background-color: var(--blue-pri);
     margin-right: 5px;
 }
 
 .btn-pri:hover {
-    background-color: #0a84ff;
+    background-color: var(--blue-sec);
 }
 
 .btn-sec {
-    background-color: #ff3030;
+    background-color: var(--red-pri);
     margin-left: 9px;
 }
 
 .btn-sec:hover,
 .btn-sec:focus {
-    background-color: #ff453a;
+    background-color: var(--red-sec);
 }
 
 .btn:focus,

@@ -1,13 +1,13 @@
-form>div:not(:last-child) {
+.form>div:not(:last-child) {
     display: inline-block;
 }
 
-form .desc {
+.form .desc {
     width: 72%;
     margin-right: 3%;
 }
 
-form .amount {
+.form .amount {
     width: 25%;
 }
 

@@ -10,6 +10,7 @@
 .list ul {
     overflow-y: auto;
     height: 157px;
+    padding-left: 5px;
     position: relative;
 }
 
@@ -24,6 +25,7 @@
     padding: 10px;
     padding-left: 50px;
     margin: 10px 0;
+    min-width: 100%;
 }
 
 .list li.plus {
@@ -47,6 +49,3 @@
     transform: translateY(-50%);
     transition: all 0.3s ease;
 }
-
-.delete-btn:hover,
-.delete-btn:focus {}

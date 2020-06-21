@@ -5,7 +5,8 @@ import { ContextTransactions } from '../../store/context'
 
 
 const ListTransaction = () => {
-    const { transactions, delTransaction } = useContext(ContextTransactions)
+    const { transactions, delTransaction } = useContext(ContextTransactions);
+
 
     return (
         <div className="list">
@@ -14,7 +15,10 @@ const ListTransaction = () => {
                 {transactions.map(transaction => (
                     <li className={transaction.amount > 0 ? `plus` : `minus`} key={transaction.id}>
                         {transaction.desc}
-                        <span>{transaction.amount}$</span>
+                        <span>
+                            {transaction.amount >= 0 ? `+` : `-`}
+                            ${Math.abs(transaction.amount)}
+                        </span>
                         <button className="delete-btn" onClick={() => delTransaction(transaction.id)}><DeleteOutlinedIcon /></button>
                     </li>
                 ))}

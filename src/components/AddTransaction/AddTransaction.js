@@ -13,8 +13,7 @@ const AddTransaction = () => {
     const { addTransaction } = useContext(ContextTransactions)
 
 
-    const submitIncome = (e) => {
-        e.preventDefault();
+    const submitIncome = () => {
 
         if (desc.trim() === '') {
             alert('Description cannot be empty!')
@@ -31,12 +30,12 @@ const AddTransaction = () => {
         addTransaction(newTransactions)
         setAmount(0)
         setDesc('')
+
+        console.log(newTransactions.amount)
     }
 
 
-    const submitExpense = (e) => {
-        e.preventDefault();
-
+    const submitExpense = () => {
 
         const newTransactions = {
             id: (Math.floor(Math.random() * 10000000000)),
@@ -46,7 +45,7 @@ const AddTransaction = () => {
 
 
         if (desc.trim() === '') {
-            alert('Invalid Input')
+            alert('Description cannot be empty!')
             return false;
         }
 
@@ -54,6 +53,8 @@ const AddTransaction = () => {
 
         setAmount(0)
         setDesc('')
+
+
     }
 
 

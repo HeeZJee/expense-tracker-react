@@ -13,7 +13,7 @@ const ListTransaction = () => {
             <h3>History</h3>
             <ul >
                 {transactions.map(transaction => (
-                    <li className={transaction.amount > 0 ? `plus` : `minus`} key={transaction.id}>
+                    <li className={transaction.amount >= 0 ? `plus` : `minus`} key={transaction.id}>
                         {transaction.desc}
                         <span>
                             {transaction.amount >= 0 ? `+` : `-`}

@@ -28,11 +28,8 @@ jobs:
       with:
         cmd: install
     
-    - name:  Intall material-ui/icons
-      run:  npm install @material-ui/icons
-      
-    - name: Adding material-ui/icons
-      run: yarn add @material-ui/icons
+    - name: Installing dependencies
+      run: npm install
         
     - name: Build React App
       run: yarn build

@@ -24,4 +24,4 @@ function App() {
 
 export default App;
 registerSW();
-console.log(registerSW());
+console.log(registerSW);

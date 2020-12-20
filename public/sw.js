@@ -1,7 +1,7 @@
 /* eslint-disable no-restricted-globals */
 const cacheName = "cache-v1";
 const host = location.href;
-console.log(`/${host}`);
+console.log(host);
 const cachePath = [
   "/",
   "/manifest.json",
@@ -31,11 +31,11 @@ self.addEventListener("install", (e) => {
   );
 });
 
-self.addEventListener("fetch", (e) => {
-  e.respondWith(
-    caches
-      .match(e.request)
-      .then((cacheRes) => cacheRes || fetch(e.request))
-      .catch((e) => console.log("Service Worker Fetch Error", e))
-  );
-});
+// self.addEventListener("fetch", (e) => {
+//   e.respondWith(
+//     caches
+//       .match(e.request)
+//       .then((cacheRes) => cacheRes || fetch(e.request))
+//       .catch((e) => console.log("Service Worker Fetch Error", e))
+//   );
+// });

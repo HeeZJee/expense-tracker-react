@@ -23,8 +23,6 @@ const AddTransaction = () => {
     addTransaction(newTransactions);
     setAmount(0);
     setDesc("");
-
-    console.log(newTransactions.amount);
   };
 
   const submitExpense = () => {

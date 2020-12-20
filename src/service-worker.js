@@ -5,6 +5,8 @@ const registerSW = () => {
       .register("/sw.js")
       .then((res) => console.log(res))
       .catch((err) => console.error(err));
+  } else {
+    console.log('"serviceWorker is not in navigator"');
   }
 };
 

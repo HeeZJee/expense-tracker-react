@@ -9,12 +9,11 @@ const initialState = {
 export const ContextTransactions = createContext(initialState);
 
 export const ContextProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialState, (state) => {
+  const [state, dispatch] = useReducer(reducer, initialState, () => {
     const getTrans = JSON.parse(localStorage.getItem(TRANSACTIONS));
-    const newTrans = getTrans?.transactions
+    return getTrans?.transactions
       ? { transactions: JSON.parse(getTrans.transactions) }
-      : [];
-    return newTrans;
+      : { transactions: [] };
   });
 
   const delTransaction = (id) => {

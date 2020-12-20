@@ -10,7 +10,7 @@ const Balance = () => {
   return (
     <div>
       <h4>Your Balance</h4>
-      <h1>${total.toFixed(2)}</h1>
+      <h1>PKR {total.toFixed(2)}</h1>
     </div>
   );
 };

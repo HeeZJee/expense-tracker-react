@@ -11,11 +11,11 @@ const AddTransaction = () => {
   const submitIncome = () => {
     if (desc.trim() === "") {
       alert("Description cannot be empty!");
-      return false;
+      return;
     }
 
     const newTransactions = {
-      id: Math.floor(Math.random() * 10000000000),
+      id: Math.random().toString(36).substr(2, 9),
       desc,
       amount: Math.abs(amount),
     };

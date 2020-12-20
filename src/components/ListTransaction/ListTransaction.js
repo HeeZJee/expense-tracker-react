@@ -5,7 +5,6 @@ import { ContextTransactions } from "../../store/context";
 
 const ListTransaction = () => {
   const { transactions, delTransaction } = useContext(ContextTransactions);
-
   return (
     <div className="list">
       <h3>History</h3>
@@ -17,7 +16,7 @@ const ListTransaction = () => {
           >
             {transaction.desc}
             <span>
-              {transaction.amount >= 0 ? `+` : `-`}$
+              {transaction.amount >= 0 ? `+ ` : `- `}PKR{" "}
               {Math.abs(transaction.amount)}
             </span>
             <button

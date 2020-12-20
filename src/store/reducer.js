@@ -1,6 +1,9 @@
+const ADD_TRANSACTION = "ADD_TRANSACTION";
+const DELETE_TRANSACTION = "DELETE_TRANSACTION";
+
 export const reducer = (state, action) => {
   switch (action.type) {
-    case "DELETE_TRANSACTION":
+    case DELETE_TRANSACTION:
       const updatedState = {
         ...state,
         transactions: state.transactions.filter(
@@ -8,7 +11,7 @@ export const reducer = (state, action) => {
         ),
       };
       return updatedState;
-    case "ADD_TRANSACTION":
+    case ADD_TRANSACTION:
       const updatedIncome = {
         ...state,
         transactions: [action.payload, ...state.transactions],

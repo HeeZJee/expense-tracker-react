@@ -1,14 +1,21 @@
-import React, { createContext, useReducer } from "react";
+import React, { createContext, useEffect, useReducer } from "react";
 import { reducer } from "./reducer";
 
-const initialList = {
+const TRANSACTIONS = "TRANSACTIONS";
+const initialState = {
   transactions: [],
 };
 
-export const ContextTransactions = createContext(initialList);
+export const ContextTransactions = createContext(initialState);
 
 export const ContextProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialList);
+  const [state, dispatch] = useReducer(reducer, initialState, (state) => {
+    const getTrans = JSON.parse(localStorage.getItem(TRANSACTIONS));
+    const newTrans = getTrans?.transactions
+      ? { transactions: JSON.parse(getTrans.transactions) }
+      : [];
+    return newTrans;
+  });
 
   const delTransaction = (id) => {
     dispatch({
@@ -16,6 +23,17 @@ export const ContextProvider = ({ children }) => {
       payload: id,
     });
   };
+
+  useEffect(
+    () =>
+      localStorage.setItem(
+        TRANSACTIONS,
+        JSON.stringify({
+          transactions: JSON.stringify(state.transactions),
+        })
+      ),
+    [state]
+  );
 
   const addTransaction = (transaction) => {
     dispatch({

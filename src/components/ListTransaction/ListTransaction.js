@@ -16,8 +16,8 @@ const ListTransaction = () => {
           >
             {transaction.desc}
             <span>
-              {transaction.amount >= 0 ? `+ ` : `- `}PKR{" "}
-              {Math.abs(transaction.amount)}
+              {transaction.amount >= 0 ? `+ ` : `- `}
+              {Math.abs(transaction.amount).toLocaleString()} PKR
             </span>
             <button
               className="delete-btn"

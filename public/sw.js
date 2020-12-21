@@ -44,7 +44,8 @@ self.addEventListener("fetch", (e) => {
     caches
       .match(e.request)
       .then((cacheRes) => {
-        console.log("Fetched", cacheRes?.url);
+        console.log("Fetched", cacheRes);
+        cacheRes || fetch(e.request);
         return cacheRes || fetch(e.request);
       })
       .catch((e) => console.warn("Service Worker Fetch Error", e))

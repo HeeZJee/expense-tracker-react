@@ -30,16 +30,23 @@ self.addEventListener("install", (e) => {
   e.waitUntil(
     caches
       .open(cacheName)
-      .then((cache) => cache.addAll(cachePath))
-      .catch((e) => console.log("Service Worker install error", e))
+      .then((cache) => {
+        console.log("Open cache", cache);
+        cache.addAll(cachePath);
+      })
+      .catch((e) => console.warn("Service Worker install error", e))
   );
 });
 
 self.addEventListener("fetch", (e) => {
+  console.log("fetching");
   e.respondWith(
     caches
       .match(e.request)
-      .then((cacheRes) => cacheRes || fetch(e.request))
-      .catch((e) => console.log("Service Worker Fetch Error", e))
+      .then((cacheRes) => {
+        console.log("Fetched", cacheRes?.url);
+        return cacheRes || fetch(e.request);
+      })
+      .catch((e) => console.warn("Service Worker Fetch Error", e))
   );
 });

@@ -1,12 +1,20 @@
 const registerSW = () => {
   if ("serviceWorker" in navigator) {
-    console.log("serviceWorker is in navigator");
-    navigator.serviceWorker
-      .register("/sw.js")
-      .then((res) => console.log(res))
-      .catch((err) => console.error(err));
-  } else {
-    console.log('"serviceWorker is not in navigator"');
+    window.addEventListener("load", function () {
+      navigator.serviceWorker.register("/sw.js").then(
+        function (registration) {
+          // Registration was successful
+          console.log(
+            "ServiceWorker registration successful with scope: ",
+            registration.scope
+          );
+        },
+        function (err) {
+          // registration failed :(
+          console.warn("ServiceWorker registration failed: ", err);
+        }
+      );
+    });
   }
 };
 

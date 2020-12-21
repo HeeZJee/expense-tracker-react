@@ -26,12 +26,11 @@ const cachePath = [
 self.addEventListener("register", () => console.log("registered sw.js"));
 
 self.addEventListener("install", (e) => {
-  console.log("Service Worker install");
   e.waitUntil(
     caches
       .open(cacheName)
       .then((cache) => {
-        console.log("Open cache", cache);
+        console.log("Open cache", cache.addAll(cachePath));
         cache.addAll(cachePath);
       })
       .catch((e) => console.warn("Service Worker install error", e))

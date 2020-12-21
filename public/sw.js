@@ -4,6 +4,7 @@ const host = location.href;
 console.log(host);
 const cachePath = [
   "/",
+  "/https://heezjee-expense-tracker.netlify.app/",
   "/manifest.json",
   "/favicon.ico",
   "/logo192.png",

@@ -1,7 +1,6 @@
 /* eslint-disable no-restricted-globals */
 const cacheName = "cache-v1";
-const host = location.href;
-console.log(host);
+
 const cachePath = [
   "/",
   "/manifest.json",
@@ -29,24 +28,36 @@ self.addEventListener("install", (e) => {
   e.waitUntil(
     caches
       .open(cacheName)
-      .then((cache) => {
-        console.log("Open cache", cache.addAll(cachePath));
-        cache.addAll(cachePath);
-      })
+      .then((cache) => cache.addAll(cachePath))
       .catch((e) => console.warn("Service Worker install error", e))
   );
 });
 
 self.addEventListener("fetch", (e) => {
-  console.log("fetching");
   e.respondWith(
     caches
       .match(e.request)
       .then((cacheRes) => {
-        console.log("Fetched", cacheRes);
         cacheRes || fetch(e.request);
         return cacheRes || fetch(e.request);
       })
       .catch((e) => console.warn("Service Worker Fetch Error", e))
   );
+});
+
+self.addEventListener("notificationclick", (e) => {
+  const notification = e.notification;
+  const action = e.action;
+  if (action === "close") {
+    notification.close();
+  } else {
+    const url = notification.data.url;
+    console.log("Open Notification: " + url);
+    clients.openWindow(url);
+  }
+});
+
+self.addEventListener("notificationclose", (e) => {
+  const url = e.notification.data.url;
+  console.log("Closed Notification: " + url);
 });

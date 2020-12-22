@@ -1,7 +1,11 @@
+import { iState } from "./state";
+
 const ADD_TRANSACTION = "ADD_TRANSACTION";
 const DELETE_TRANSACTION = "DELETE_TRANSACTION";
 
-export const reducer = (state, action) => {
+type Actions = { type: string; payload: number };
+
+export const reducer = (state: iState, action: Actions) => {
   switch (action.type) {
     case DELETE_TRANSACTION:
       const updatedState = {

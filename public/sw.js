@@ -34,14 +34,19 @@ self.addEventListener("install", (e) => {
 });
 
 self.addEventListener("fetch", (e) => {
-  e.respondWith(
-    caches
-      .match(e.request)
-      .then((cacheRes) => {
-        cacheRes || fetch(e.request);
-        return cacheRes || fetch(e.request);
-      })
-      .catch((e) => console.warn("Service Worker Fetch Error", e))
+   e.respondWith(
+    caches.match(e.request).then((resp) => {
+      return (
+        resp ||
+        fetch(e.request).then((response) => {
+          return caches.open(cacheName).then((cache) => {
+            console.log("fetching", cache);
+            cache.put(e.request, response.clone());
+            return response;
+          });
+        })
+      );
+    })
   );
 });
 
